@@ -23,6 +23,7 @@ export const techStackLinks = {
   "Drizzle": "https://orm.drizzle.team/",
   "Nuxt": "https://nuxt.com/",
   "Better Auth": "https://www.better-auth.com/",
+  "Hono": "https://hono.dev/",
 }
 
 export const products: Product[] = [
@@ -77,6 +78,26 @@ export const products: Product[] = [
     tags: [],
   },
   {
+    id: "velocitymail",
+    name: "Velocity Mail",
+    subtitle: "Email automation and delivery testing",
+    image: "/velocitymail/0.png",
+    longDescription:
+      "Velocity Mail is an email delivery testing platform allowing teams and automations alike to test and validate email delivery without the hassle of setting up your own infrastructure and risk of emailing your users. Test delivery, validate authentication, analyze headers, spam scores, and more. Get a free @velocitymail.io email address, connect your own domain, or use our fake SMTP server to capture emails.",
+    techStack: ["Next.js", "Cloudflare"],
+    features: [
+      "Emphemeral and persistent inboxes",
+      "Free @velocitymail.io addresses or connect your own domain",
+      "Fake SMTP server to capture email from any app supporting SMTP",
+      "Analyze authentication, spam scores, antivirus results, headers, and more",
+      "DNS record generation and validation for SPF, DKIM, DMARC, MTA-STS, and BIMI",
+      "Multi-user organization with RBAC, SSO, and SCIM support",
+    ],
+    screenshots: ["/velocitymail/0.png", "/velocitymail/1.png", "/velocitymail/2.png", "/velocitymail/3.png"],
+    productUrl: "https://velocitymail.io",
+    tags: ['Closed Beta'],
+  },
+  {
     id: "amplehelp",
     name: "AmpleHelp",
     subtitle: "AI-powered knowledge bases and help centers for modern teams",
@@ -103,7 +124,7 @@ export const products: Product[] = [
     image: "/hookhq/4.png",
     longDescription:
       "HookHQ is an open-source outbound webhook platform built entirely on the Cloudflare Developer Platform. It provides a lightweight management dashboard, developer-friendly API, and embeddable customer portal, making it easy to deliver reliable webhook events from your applications without building the infrastructure yourself.",
-    techStack: ["Next.js", "Drizzle", "Better Auth", "Cloudflare"],
+    techStack: ["Next.js", "Hono", "Cloudflare"],
     features: [
       "One-click deployment to Cloudflare Workers",
       "Real-time delivery metrics, analytics, and logging",
