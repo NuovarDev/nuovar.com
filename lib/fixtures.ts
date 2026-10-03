@@ -95,7 +95,7 @@ export const products: Product[] = [
     ],
     screenshots: ["/velocitymail/0.png", "/velocitymail/1.png", "/velocitymail/2.png", "/velocitymail/3.png"],
     productUrl: "https://velocitymail.io",
-    tags: ['Closed Beta'],
+    tags: [],
   },
   {
     id: "amplehelp",
