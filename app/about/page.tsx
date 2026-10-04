@@ -32,7 +32,7 @@ export default function AboutPage() {
       <div className="relative z-10">
         <CursorEffect />
         <Navbar />
-        <main className="mx-auto max-w-4xl px-6 pb-20 pt-32">
+        <main id="main-content" className="mx-auto max-w-4xl px-6 pb-20 pt-32">
           <h1 className="mb-8 text-4xl font-medium text-white md:text-5xl">
             About {company.name}
           </h1>

@@ -56,16 +56,18 @@ export function ImageLightbox({
 
   return (
     <>
-      <div
+      <button
+        type="button"
         onClick={() => handleOpen(initialIndex)}
-        className="cursor-pointer transition-opacity hover:opacity-90"
+        className="block w-full cursor-pointer rounded-sm text-left transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        aria-label={`Open ${alt} ${initialIndex + 1} in full size`}
       >
         {children}
-      </div>
+      </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-7xl p-0 [&>button]:hidden border-none">
           <VisuallyHidden>
-            <DialogTitle>Image</DialogTitle>
+            <DialogTitle>{`${alt}, image ${currentIndex + 1} of ${images.length}`}</DialogTitle>
           </VisuallyHidden>
           <div className="relative flex h-[90vh] items-center justify-center bg-black">
             {/* Close Button */}
@@ -88,6 +90,7 @@ export function ImageLightbox({
                   size="icon"
                   className="absolute left-4 z-10 h-12 w-12 rounded-full bg-black/50 text-white hover:bg-black/70 cursor-pointer"
                   onClick={handlePrevious}
+                  aria-label="Previous image"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
@@ -96,6 +99,7 @@ export function ImageLightbox({
                   size="icon"
                   className="absolute right-16 z-10 h-12 w-12 rounded-full bg-black/50 text-white hover:bg-black/70 cursor-pointer"
                   onClick={handleNext}
+                  aria-label="Next image"
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
@@ -115,7 +119,7 @@ export function ImageLightbox({
 
             {/* Image Counter */}
             {images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white">
+              <div aria-live="polite" className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white">
                 {currentIndex + 1} / {images.length}
               </div>
             )}

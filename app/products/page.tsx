@@ -36,7 +36,7 @@ export default function ProductsPage() {
         <CursorEffect />
         <Navbar />
 
-        <main className="mx-auto max-w-7xl px-6 pb-20 pt-28">
+        <main id="main-content" className="mx-auto max-w-7xl px-6 pb-20 pt-28">
           <section className="mb-12">
             <div>
               <h1 className="text-5xl font-light tracking-[-0.04em] text-white sm:text-6xl">

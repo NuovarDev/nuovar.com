@@ -64,7 +64,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       <div className="relative z-10">
         <CursorEffect />
         <Navbar />
-        <main className="mx-auto max-w-6xl px-6 pb-20 pt-24">
+        <main id="main-content" className="mx-auto max-w-6xl px-6 pb-20 pt-24">
           {/* Back Button */}
           <Button variant="ghost" asChild className="mb-8 text-white hover:text-white/80 hover:bg-white/10">
             <Link href="/">

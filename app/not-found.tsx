@@ -21,7 +21,7 @@ export default function NotFound() {
         <CursorEffect />
         <Navbar />
 
-        <main className="mx-auto flex min-h-[calc(100vh-96px)] max-w-6xl flex-col justify-center px-6 pb-16 pt-28">
+        <main id="main-content" className="mx-auto flex min-h-[calc(100vh-96px)] max-w-6xl flex-col justify-center px-6 pb-16 pt-28">
           <div>
             <section>
               <div className="inline-flex items-center rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm text-white/70 backdrop-blur-sm">

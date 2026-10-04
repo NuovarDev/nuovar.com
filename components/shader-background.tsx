@@ -22,9 +22,15 @@ const SHADER_COLORS = {
 export function ShaderBackground() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches)
+    updatePreference()
+    mediaQuery.addEventListener("change", updatePreference)
+
     const checkShaderReady = () => {
       if (shaderContainerRef.current) {
         const canvas = shaderContainerRef.current.querySelector("canvas")
@@ -61,6 +67,7 @@ export function ShaderBackground() {
       clearInterval(intervalId)
       clearTimeout(fallbackTimer)
       window.removeEventListener("error", handleError)
+      mediaQuery.removeEventListener("change", updatePreference)
     }
   }, [])
 
@@ -68,8 +75,8 @@ export function ShaderBackground() {
     <>
       <GrainOverlay />
 
-      {hasError ? (
-        <div className={`fixed inset-0 z-0 bg-linear-to-br ${SHADER_COLORS.fallbackGradient} animate-gradient`} />
+      {hasError || prefersReducedMotion ? (
+        <div className={`fixed inset-0 z-0 bg-linear-to-br ${SHADER_COLORS.fallbackGradient} ${prefersReducedMotion ? "" : "animate-gradient"}`} />
       ) : (
         <div
           ref={shaderContainerRef}

@@ -15,7 +15,7 @@ export default function Home() {
       <div className="relative z-10">
         <CursorEffect />
         <Navbar />
-        <main className="pt-32 flex flex-col lg:flex-row lg:items-center lg:gap-8 lg:px-8 lg:min-h-[calc(100vh-80px)] py-8 lg:py-0">
+        <main id="main-content" className="pt-32 flex flex-col lg:flex-row lg:items-center lg:gap-8 lg:px-8 lg:min-h-[calc(100vh-80px)] py-8 lg:py-0">
           <div className="lg:w-1/2">
             <Hero />
           </div>

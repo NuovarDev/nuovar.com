@@ -33,7 +33,7 @@ export default function TermsPage() {
       <div className="relative z-10">
         <CursorEffect />
         <Navbar />
-        <main className="mx-auto max-w-6xl px-8 pb-20 pt-32">
+        <main id="main-content" className="mx-auto max-w-6xl px-8 pb-20 pt-32">
           <div className="flex gap-12">
             <div className="flex-1">
               <h1 className="mb-8 text-4xl font-medium text-white md:text-5xl">
@@ -922,4 +922,3 @@ export default function TermsPage() {
     </div>
   )
 }
-
